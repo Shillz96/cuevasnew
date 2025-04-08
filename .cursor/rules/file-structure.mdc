@@ -1,9 +1,4 @@
 ---
-description: 
-globs: 
-alwaysApply: false
----
----
 description: Maintain consistent file structure and organization
 globs: app/public/wp-content/themes/cuevas-theme/**/*
 alwaysApply: true

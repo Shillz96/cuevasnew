@@ -1,9 +1,4 @@
 ---
-description: 
-globs: 
-alwaysApply: false
----
----
 description: Maintain consistent branding in the Cuevas Western Wear theme
 globs: app/public/wp-content/themes/cuevas-theme/**/*
 alwaysApply: true
@@ -29,9 +24,10 @@ Do not use hardcoded color values. Always reference these CSS variables.
 
 ## Typography
 Maintain the brand typography hierarchy:
-- Headings: Playfair Display
-- Body text: Roboto
-- Accent text: Fjalla One
+- Global font: Cinzel (primary font throughout the theme)
+- Headings: Cinzel 
+- Body text: Cinzel for main content
+- Accent text: Cinzel for emphasis and special sections
 
 ## Animation Guidelines
 - Use GSAP for all animations

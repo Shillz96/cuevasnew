@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="western-pattern" patternUnits="userSpaceOnUse" width="300" height="300">
+      <!-- Lasso Loops -->
+      <path d="M50,50 C70,30 90,70 70,90 C50,110 30,70 50,50" 
+            stroke="#8B4513" 
+            stroke-width="2" 
+            fill="none" />
+            
+      <path d="M250,50 C270,30 290,70 270,90 C250,110 230,70 250,50" 
+            stroke="#8B4513" 
+            stroke-width="2" 
+            fill="none" />
+            
+      <path d="M50,250 C70,230 90,270 70,290 C50,310 30,270 50,250" 
+            stroke="#8B4513" 
+            stroke-width="2" 
+            fill="none" />
+            
+      <path d="M250,250 C270,230 290,270 270,290 C250,310 230,270 250,250" 
+            stroke="#8B4513" 
+            stroke-width="2" 
+            fill="none" />
+      
+      <!-- Boot Icons -->
+      <path d="M100,120 L110,100 L120,100 L130,120 L130,140 L120,150 L110,150 L100,140 L100,120" 
+            stroke="#8B4513" 
+            stroke-width="1.5" 
+            fill="none" />
+            
+      <path d="M170,120 L180,100 L190,100 L200,120 L200,140 L190,150 L180,150 L170,140 L170,120" 
+            stroke="#8B4513" 
+            stroke-width="1.5" 
+            fill="none" />
+      
+      <!-- Hat Icons -->
+      <path d="M100,200 L120,190 L140,190 L160,200 L140,210 L120,210 L100,200" 
+            stroke="#8B4513" 
+            stroke-width="1.5" 
+            fill="none" />
+            
+      <path d="M110,195 L150,195" 
+            stroke="#8B4513" 
+            stroke-width="1" 
+            fill="none" />
+            
+      <!-- Star Patterns -->
+      <path d="M50,150 L53,158 L62,158 L55,163 L58,171 L50,166 L42,171 L45,163 L38,158 L47,158 Z" 
+            fill="#E6C200" 
+            opacity="0.3" />
+            
+      <path d="M250,150 L253,158 L262,158 L255,163 L258,171 L250,166 L242,171 L245,163 L238,158 L247,158 Z" 
+            fill="#E6C200" 
+            opacity="0.3" />
+            
+      <!-- Horseshoe -->
+      <path d="M150,50 C170,50 180,70 180,90 C180,110 160,120 150,120 C140,120 120,110 120,90 C120,70 130,50 150,50" 
+            stroke="#8B4513" 
+            stroke-width="2" 
+            fill="none" />
+            
+      <path d="M135,50 L135,60" 
+            stroke="#8B4513" 
+            stroke-width="2" 
+            fill="none" />
+            
+      <path d="M165,50 L165,60" 
+            stroke="#8B4513" 
+            stroke-width="2" 
+            fill="none" />
+            
+      <!-- Western Pattern Borders -->
+      <path d="M0,0 L300,0 M0,300 L300,300 M0,0 L0,300 M300,0 L300,300" 
+            stroke="#8B4513" 
+            stroke-width="0.5" 
+            stroke-dasharray="10,5" 
+            fill="none" />
+            
+      <!-- Small Decorative Elements -->
+      <circle cx="150" cy="250" r="5" fill="#8B4513" opacity="0.2" />
+      <circle cx="30" cy="30" r="3" fill="#8B4513" opacity="0.2" />
+      <circle cx="270" cy="30" r="3" fill="#8B4513" opacity="0.2" />
+      <circle cx="30" cy="270" r="3" fill="#8B4513" opacity="0.2" />
+      <circle cx="270" cy="270" r="3" fill="#8B4513" opacity="0.2" />
+      
+      <!-- Crosses -->
+      <path d="M150,150 L150,160 M145,155 L155,155" 
+            stroke="#8B4513" 
+            stroke-width="2" 
+            opacity="0.3" />
+            
+      <path d="M80,80 L80,90 M75,85 L85,85" 
+            stroke="#8B4513" 
+            stroke-width="2" 
+            opacity="0.3" />
+            
+      <path d="M220,80 L220,90 M215,85 L225,85" 
+            stroke="#8B4513" 
+            stroke-width="2" 
+            opacity="0.3" />
+            
+      <path d="M80,220 L80,230 M75,225 L85,225" 
+            stroke="#8B4513" 
+            stroke-width="2" 
+            opacity="0.3" />
+            
+      <path d="M220,220 L220,230 M215,225 L225,225" 
+            stroke="#8B4513" 
+            stroke-width="2" 
+            opacity="0.3" />
+    </pattern>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#western-pattern)" />
+</svg> 

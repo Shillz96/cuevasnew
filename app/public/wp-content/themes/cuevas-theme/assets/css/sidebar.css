@@ -1,0 +1,340 @@
+/**
+ * Collapsible Sidebar Component
+ * 
+ * A responsive, collapsible sidebar for product filtering.
+ * Includes toggle functionality for mobile devices.
+ */
+
+/* Sidebar Container */
+.shop-sidebar {
+    width: 280px;
+    max-width: 100%;
+    flex-shrink: 0;
+    margin-right: 40px;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+/* Sidebar Toggle Button (Mobile) */
+.sidebar-toggle {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #8B4513;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border: none;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar-toggle-icon {
+    width: 20px;
+    height: 2px;
+    background-color: #fff;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.sidebar-toggle-icon:before,
+.sidebar-toggle-icon:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    left: 0;
+    transition: all 0.3s ease;
+}
+
+.sidebar-toggle-icon:before {
+    top: -6px;
+}
+
+.sidebar-toggle-icon:after {
+    top: 6px;
+}
+
+/* Toggle active state */
+.sidebar-toggle.active .sidebar-toggle-icon {
+    background-color: transparent;
+}
+
+.sidebar-toggle.active .sidebar-toggle-icon:before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.sidebar-toggle.active .sidebar-toggle-icon:after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+/* Filter Sections */
+.filter-section {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.filter-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.filter-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #333;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.filter-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: #8B4513;
+}
+
+/* Category List */
+.category-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.category-item {
+    margin-bottom: 8px;
+}
+
+.category-link {
+    display: block;
+    padding: 8px 0;
+    color: #333;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.category-link:hover {
+    color: #8B4513;
+    padding-left: 5px;
+}
+
+.category-link.active {
+    color: #8B4513;
+    font-weight: 600;
+}
+
+/* Price Range Slider */
+.price-slider {
+    position: relative;
+    height: 4px;
+    background-color: #e0e0e0;
+    margin: 30px 0;
+    border-radius: 2px;
+}
+
+.price-range {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 70%;
+    height: 100%;
+    background-color: #8B4513;
+}
+
+.price-handle {
+    position: absolute;
+    top: 50%;
+    width: 16px;
+    height: 16px;
+    background-color: white;
+    border: 2px solid #8B4513;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.price-handle:hover {
+    transform: translate(-50%, -50%) scale(1.2);
+}
+
+.price-handle.min {
+    left: 0%;
+}
+
+.price-handle.max {
+    left: 30%;
+}
+
+.price-values {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #666;
+}
+
+.filter-button {
+    display: inline-block;
+    width: 100%;
+    padding: 12px 0;
+    background-color: #8B4513;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.filter-button:hover {
+    background-color: #59331D;
+}
+
+/* Color Filter */
+.color-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.color-option {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.color-option:hover {
+    transform: scale(1.1);
+}
+
+.color-option.active {
+    border-color: #333;
+    transform: scale(1.1);
+}
+
+/* Size Filter */
+.size-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.size-option {
+    min-width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.size-option:hover {
+    border-color: #8B4513;
+    color: #8B4513;
+}
+
+.size-option.active {
+    background-color: #8B4513;
+    border-color: #8B4513;
+    color: white;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .shop-content {
+        flex-direction: column;
+    }
+    
+    .shop-sidebar {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .shop-sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        background-color: #fff;
+        z-index: 1000;
+        padding: 20px;
+        overflow-y: auto;
+        transform: translateX(-100%);
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        width: 280px;
+    }
+    
+    .shop-sidebar.active {
+        transform: translateX(0);
+    }
+    
+    .sidebar-toggle {
+        display: flex;
+    }
+    
+    .sidebar-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+    
+    .sidebar-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .sidebar-close {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        background: none;
+        cursor: pointer;
+        font-size: 20px;
+        color: #333;
+    }
+} 

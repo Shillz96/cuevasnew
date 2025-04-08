@@ -1,0 +1,203 @@
+/**
+ * Cuevas Western Wear - Team Section Styles
+ * Styling for the team/artisan profiles section
+ */
+
+/* Team section container */
+.team-section {
+  padding: var(--spacing-xl) 0;
+  background-color: rgba(255, 248, 220, 0.5);
+}
+
+/* Section header */
+.team-section .section-title {
+  margin-bottom: var(--spacing-sm);
+  position: relative;
+}
+
+.team-section .section-subtitle {
+  max-width: 700px;
+  margin: 0 auto var(--spacing-lg);
+  text-align: center;
+  color: var(--secondary);
+}
+
+/* Team grid layout */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
+  margin: var(--spacing-lg) 0;
+}
+
+/* Artisan profile styling */
+.team-section .artisan-profile {
+  background-color: var(--white);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: transform var(--transition-medium), box-shadow var(--transition-medium);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-bottom: var(--spacing-md);
+}
+
+.team-section .artisan-profile:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.team-section .artisan-photo {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: var(--spacing-md) auto;
+  border: 3px solid var(--accent);
+  box-shadow: 0 0 0 5px rgba(230, 194, 0, 0.1);
+}
+
+.team-section .artisan-info {
+  padding: 0 var(--spacing-md);
+}
+
+.team-section .artisan-name {
+  color: var(--primary-dark);
+  margin-bottom: var(--spacing-xs);
+  font-size: 1.3rem;
+  position: relative;
+}
+
+.team-section .artisan-name::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 2px;
+  background-color: var(--accent);
+  margin: var(--spacing-xs) auto;
+}
+
+.team-section .artisan-title {
+  font-style: italic;
+  color: var(--primary);
+  margin-bottom: var(--spacing-sm);
+  font-size: 1rem;
+}
+
+/* Featured artisan styling (for highlighting) */
+.artisan-profile.featured {
+  position: relative;
+  overflow: hidden;
+}
+
+.artisan-profile.featured::before {
+  content: "Master Craftsman";
+  position: absolute;
+  top: 20px;
+  right: -30px;
+  background-color: var(--accent);
+  color: var(--secondary-dark);
+  padding: 5px 30px;
+  font-size: 0.8rem;
+  transform: rotate(45deg);
+  z-index: 1;
+  font-weight: 600;
+}
+
+/* Artisan social links (optional) */
+.artisan-social {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--spacing-sm);
+  gap: var(--spacing-xs);
+}
+
+.artisan-social a {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: var(--light-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color var(--transition-fast);
+}
+
+.artisan-social a:hover {
+  background-color: var(--accent);
+  color: var(--secondary-dark);
+}
+
+/* Western-styled quote decoration */
+.artisan-quote {
+  position: relative;
+  font-style: italic;
+  margin-top: var(--spacing-sm);
+  padding: var(--spacing-sm);
+  color: var(--secondary);
+}
+
+.artisan-quote::before,
+.artisan-quote::after {
+  font-family: 'Georgia', serif;
+  position: absolute;
+  font-size: 2rem;
+  color: var(--accent);
+  opacity: 0.4;
+}
+
+.artisan-quote::before {
+  content: """;
+  top: -10px;
+  left: 0;
+}
+
+.artisan-quote::after {
+  content: """;
+  bottom: -20px;
+  right: 0;
+}
+
+/* Specialty labels - can be applied to artisan profiles */
+.specialty-label {
+  display: inline-block;
+  padding: 3px 10px;
+  background-color: rgba(139, 69, 19, 0.1);
+  border-left: 3px solid var(--primary);
+  font-size: 0.85rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Team CTA section */
+.team-cta {
+  text-align: center;
+  margin-top: var(--spacing-lg);
+  padding: var(--spacing-md);
+  background-color: rgba(139, 69, 19, 0.05);
+  border-radius: var(--border-radius-md);
+}
+
+.team-cta-title {
+  margin-bottom: var(--spacing-sm);
+  font-size: 1.4rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .team-section .artisan-photo {
+    width: 150px;
+    height: 150px;
+  }
+} 

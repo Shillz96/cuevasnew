@@ -1,0 +1,184 @@
+/**
+ * Full-screen 2x4 Product Grid
+ * 
+ * Styles for displaying a clean, visual 2x4 product grid with minimal text
+ * and clickable product cards that fill the entire viewport.
+ */
+
+/* Full-screen section */
+.product-grid-section {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    background-color: #f9f9f9; /* Ensure background is set */
+}
+
+/* 2x4 Grid Layout - two rows, four columns */
+.product-grid-section .product-grid { /* Scope to section */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    grid-template-rows: repeat(2, 1fr); /* 2 rows */
+    gap: 12px;
+    width: 100%;
+    height: 100vh; /* Make grid fill the viewport height */
+    padding: 12px;
+    box-sizing: border-box;
+}
+
+/* Product Card Container within the specific grid */
+.product-grid-section .product-card {
+    position: relative; /* Needed for absolute positioning of children */
+    background-color: #fff;
+    border-radius: 0;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 0;
+    padding: 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    height: 100%; /* Make card fill grid cell */
+    /* Basic flex setup for link inside */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Product Link within the specific grid */
+.product-grid-section .product-link {
+    display: flex; /* Use flex */
+    flex-direction: column; /* Stack vertically */
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+    flex-grow: 1; /* Allow link to fill card */
+}
+
+/* Product Image Container within the specific grid */
+.product-grid-section .product-image-container {
+    position: relative; /* Relative for badge positioning */
+    width: 100%;
+    height: 100%; /* Make image container fill the link height */
+    overflow: hidden;
+}
+
+.product-grid-section .product-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the container */
+    transition: transform 0.5s ease;
+}
+
+/* Info section hidden by default ONLY in this grid section */
+.product-grid-section .product-card .product-info {
+    display: none;
+}
+
+/* Specific hover effect for this grid */
+.product-grid-section .product-card:hover {
+    transform: scale(1.02);
+    z-index: 10;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.product-grid-section .product-card:hover .product-image-container img {
+    transform: scale(1.1);
+}
+
+/* Product Badge (Sale) within the specific grid */
+.product-grid-section .product-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    padding: 6px 12px;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    z-index: 2;
+}
+
+.product-grid-section .badge-sale {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+/* Quick View on Hover within the specific grid (If used) */
+.product-grid-section .product-quick-view {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 16px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    text-align: center;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.product-grid-section .product-card:hover .product-quick-view {
+    transform: translateY(0);
+}
+
+/* Responsive adjustments for the specific grid */
+@media (max-width: 1200px) {
+    .product-grid-section .product-grid {
+        grid-template-columns: repeat(4, 1fr); /* Keep 4 columns */
+        grid-template-rows: repeat(2, 1fr); /* Keep 2 rows */
+    }
+}
+
+@media (max-width: 992px) {
+    .product-grid-section .product-grid {
+        grid-template-columns: repeat(2, 1fr); /* Adjust to 2 columns */
+        grid-template-rows: repeat(4, 1fr); /* Adjust to 4 rows */
+    }
+}
+
+@media (max-width: 768px) {
+    .product-grid-section .product-grid {
+        grid-template-columns: repeat(2, 1fr); /* Keep 2 columns */
+        grid-template-rows: repeat(4, 1fr); /* Keep 4 rows */
+    }
+}
+
+@media (max-width: 576px) {
+    .product-grid-section .product-grid {
+        grid-template-columns: 1fr; /* Single column */
+        grid-template-rows: repeat(8, 1fr); /* 8 rows */
+        gap: 8px;
+        padding: 8px;
+    }
+    
+    .product-grid-section .product-badge {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+}
+
+/* Remove the general WC grid rules from here, they belong elsewhere */
+/*
+.products-grid ul.products,
+.woocommerce ul.products,
+.woocommerce-page ul.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+    gap: 30px; 
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.products-grid ul.products li.product,
+.woocommerce ul.products li.product,
+.woocommerce-page ul.products li.product {
+    display: flex; 
+    flex-direction: column;
+    margin: 0; 
+    height: 100%;
+}
+*/ 

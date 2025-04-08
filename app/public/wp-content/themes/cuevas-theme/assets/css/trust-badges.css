@@ -1,0 +1,145 @@
+/**
+ * Cuevas Western Wear - Trust Badges
+ * Trust elements to build customer confidence
+ */
+
+/* Trust badges section */
+.trust-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing-md);
+  margin: var(--spacing-lg) 0;
+  padding: var(--spacing-md);
+  background-color: rgba(255, 248, 220, 0.7);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+/* Individual trust badge */
+.trust-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--spacing-sm);
+  min-width: 140px;
+  flex: 1;
+}
+
+.trust-badge-icon {
+  font-size: 2rem;
+  margin-bottom: var(--spacing-xs);
+  color: var(--primary);
+}
+
+.trust-badge-title {
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  color: var(--primary-dark);
+}
+
+.trust-badge-text {
+  font-size: 0.8rem;
+  color: var(--secondary);
+  margin: 0;
+}
+
+/* Western styled trust badge */
+.trust-badge-western {
+  position: relative;
+  padding-top: var(--spacing-md);
+}
+
+.trust-badge-western::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: var(--accent);
+}
+
+/* Trust badge with frame */
+.trust-badge-framed {
+  border: 1px solid var(--accent);
+  border-radius: var(--border-radius-sm);
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: var(--white);
+}
+
+/* Payment methods section */
+.payment-methods {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-md);
+}
+
+.payment-icon {
+  height: 24px;
+  width: auto;
+  opacity: 0.8;
+  transition: opacity var(--transition-fast);
+}
+
+.payment-icon:hover {
+  opacity: 1;
+}
+
+/* Security badges */
+.security-badges {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+
+.security-badge {
+  max-height: 40px;
+  width: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .trust-badges {
+    gap: var(--spacing-sm);
+  }
+  
+  .trust-badge {
+    min-width: 120px;
+    padding: var(--spacing-xs);
+  }
+  
+  .trust-badge-icon {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .trust-badges {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .trust-badge {
+    width: 100%;
+    max-width: 250px;
+    flex-direction: row;
+    text-align: left;
+    gap: var(--spacing-sm);
+  }
+  
+  .trust-badge-icon {
+    margin-bottom: 0;
+  }
+  
+  .trust-badge-content {
+    flex: 1;
+  }
+} 

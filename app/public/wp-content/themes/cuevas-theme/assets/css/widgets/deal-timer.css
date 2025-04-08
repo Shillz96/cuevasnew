@@ -1,0 +1,263 @@
+/* Deal Timer Widget Styles */
+.deal-timer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: #f8f4e9;
+  background-image: url('../images/western-pattern-light.png');
+  border: 2px solid #8c6d46;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 30px auto;
+  max-width: 900px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Badge Styles */
+.deal-badge {
+  position: relative;
+  flex-shrink: 0;
+  width: 120px;
+  height: 120px;
+  margin-right: 20px;
+}
+
+.badge-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.badge-shape {
+  fill: #8c3b20;
+  stroke: #e9d4a5;
+  stroke-width: 2px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.badge-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  padding: 5px;
+}
+
+.badge-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 2px;
+  letter-spacing: 1px;
+}
+
+.badge-discount {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+/* Content Styles */
+.deal-content {
+  flex: 1;
+}
+
+.deal-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  color: #472c14;
+  margin: 0 0 10px;
+  position: relative;
+  display: inline-block;
+}
+
+.deal-title:after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, #8c3b20, transparent);
+}
+
+.deal-description {
+  font-size: 15px;
+  color: #5e4a36;
+  margin-bottom: 15px;
+}
+
+/* Countdown Styles */
+.countdown-container {
+  margin: 15px 0;
+}
+
+.countdown-label {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: #472c14;
+  margin-bottom: 8px;
+}
+
+.countdown-timer {
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 6px;
+  padding: 10px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.countdown-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 5px;
+}
+
+.countdown-value {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #8c3b20;
+  line-height: 1;
+  background-color: #fff;
+  border: 1px solid #e9d4a5;
+  border-radius: 4px;
+  padding: 8px;
+  min-width: 45px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.countdown-unit .countdown-label {
+  font-size: 12px;
+  margin-top: 5px;
+  color: #5e4a36;
+}
+
+.countdown-divider {
+  font-size: 24px;
+  font-weight: 700;
+  color: #8c3b20;
+  margin: 0 2px;
+  align-self: flex-start;
+  padding-top: 8px;
+}
+
+.expired {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #8c3b20;
+}
+
+/* CTA Button */
+.deal-cta .btn {
+  background-color: #8c3b20;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.deal-cta .btn:hover {
+  background-color: #703016;
+}
+
+/* Close Button */
+.deal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: #8c6d46;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 5px;
+  transition: color 0.3s ease;
+}
+
+.deal-close:hover {
+  color: #472c14;
+}
+
+/* Animation */
+.deal-timer.closed {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .deal-timer {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 15px 20px;
+  }
+  
+  .deal-badge {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+  
+  .deal-title:after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .countdown-timer {
+    justify-content: center;
+  }
+  
+  .deal-close {
+    top: 5px;
+    right: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .countdown-value {
+    font-size: 20px;
+    min-width: 35px;
+    padding: 6px;
+  }
+  
+  .countdown-unit .countdown-label {
+    font-size: 10px;
+  }
+  
+  .countdown-divider {
+    font-size: 20px;
+  }
+  
+  .deal-title {
+    font-size: 20px;
+  }
+  
+  .deal-description {
+    font-size: 14px;
+  }
+} 

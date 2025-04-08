@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gold-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E6C200" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#F0D055" stop-opacity="0.9"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Decorative corner border -->
+  <path d="M5,5 L55,5 L55,15 C45,15 45,25 45,35 C45,45 35,45 25,45 C15,45 15,45 15,55 L5,55 Z" 
+        stroke="url(#gold-gradient)" 
+        stroke-width="2" 
+        fill="none" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"/>
+  
+  <!-- Corner decorative star -->
+  <path d="M30,30 L33,37 L40,37 L35,42 L37,50 L30,45 L23,50 L25,42 L20,37 L27,37 Z" 
+        fill="url(#gold-gradient)" 
+        opacity="0.7"/>
+  
+  <!-- Decorative rope element -->
+  <path d="M5,15 C8,13 12,17 15,15 C18,13 22,17 25,15" 
+        stroke="#8B4513" 
+        stroke-width="1.5" 
+        fill="none" 
+        stroke-linecap="round"/>
+  
+  <path d="M35,5 C37,8 33,12 35,15 C37,18 33,22 35,25" 
+        stroke="#8B4513" 
+        stroke-width="1.5" 
+        fill="none" 
+        stroke-linecap="round"/>
+  
+  <!-- Small decorative elements -->
+  <circle cx="10" cy="30" r="2" fill="#8B4513" opacity="0.6"/>
+  <circle cx="30" cy="10" r="2" fill="#8B4513" opacity="0.6"/>
+  
+  <!-- Horseshoe element -->
+  <path d="M15,35 C15,30 20,30 20,35 C20,40 15,40 15,35" 
+        stroke="#8B4513" 
+        stroke-width="1.5" 
+        fill="none"/>
+  
+  <path d="M15,35 L17,35" 
+        stroke="#8B4513" 
+        stroke-width="1" 
+        fill="none"/>
+  
+  <path d="M18,35 L20,35" 
+        stroke="#8B4513" 
+        stroke-width="1" 
+        fill="none"/>
+  
+  <!-- Small boot icon -->
+  <path d="M40,40 L42,36 L44,36 L46,40 L46,44 L44,46 L42,46 L40,44 Z" 
+        stroke="#8B4513" 
+        stroke-width="1" 
+        fill="none"/>
+  
+  <!-- Connection dots -->
+  <circle cx="5" cy="5" r="1.5" fill="url(#gold-gradient)"/>
+  <circle cx="55" cy="5" r="1.5" fill="url(#gold-gradient)"/>
+  <circle cx="5" cy="55" r="1.5" fill="url(#gold-gradient)"/>
+  
+  <!-- Lasso loop -->
+  <path d="M45,35 C48,32 51,38 48,41 C45,44 42,38 45,35" 
+        stroke="#8B4513" 
+        stroke-width="1" 
+        fill="none"/>
+</svg> 

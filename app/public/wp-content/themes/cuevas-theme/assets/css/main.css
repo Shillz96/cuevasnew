@@ -1,0 +1,1095 @@
+/**
+ * Cuevas Western Wear - Main Stylesheet
+ * 
+ * This is the primary stylesheet that imports all component stylesheets.
+ * For WordPress integration, this should be enqueued as the main stylesheet.
+ */
+
+/* Import CSS files */
+@import url('product-card.css');
+@import url('sidebar.css');
+@import url('product-page.css');
+@import url('product-badges.css');
+@import url('trust-badges.css');
+@import url('western-icons.css');
+@import url('brand-elements.css');
+@import url('team-section.css');
+@import url('shop.css');
+@import url('cart.css');
+@import url('contact.css');
+@import url('story.css');
+@import url('faq.css');
+
+/* Import Widget Stylesheets */
+@import url('widgets/deal-timer.css');
+@import url('widgets/featured-product.css');
+@import url('widgets/western-style-guide.css');
+@import url('widgets/heritage-story-blocks.css');
+@import url('widgets/featured-category.css');
+@import url('widgets/product-carousel.css');
+
+/* Base Styles and Variables */
+:root {
+    /* Primary Colors */
+    --primary: #8B4513;
+    --primary-rgb: 139, 69, 19; /* Added RGB version for use in rgba() */
+    --primary-light: #A0522D;
+    --primary-dark: #663300;
+    
+    /* Button Color (from hero button) */
+    --color-button: #A52A2A; /* Brown */
+    
+    /* Secondary Colors */
+    --secondary: #444444;
+    --secondary-light: #666666;
+    --secondary-dark: #222222;
+    
+    /* Accent Colors */
+    --accent: #E6C200;
+    --accent-light: #F0D055;
+    --accent-dark: #BF9E00;
+    
+    /* Neutral Colors */
+    --white: #FFFFFF;
+    --light: #F5F5F5;
+    --light-gray: #E0E0E0;
+    --mid-gray: #999999;
+    --dark-gray: #555555;
+    --black: #111111;
+    
+    /* UI Colors */
+    --success: #4CAF50;
+    --warning: #FF9800;
+    --error: #F44336;
+    --info: #2196F3;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+    
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-medium: 0.3s ease;
+    --transition-slow: 0.5s ease;
+    
+    /* Border Radius */
+    --border-radius-sm: 3px;
+    --border-radius-md: 5px;
+    --border-radius-lg: 8px;
+    
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    
+    /* Layout */
+    --container-width: 1200px;
+    --sidebar-width: 280px;
+    --header-height: 80px;
+    --footer-height: 300px;
+}
+
+/* Reset & Base Styles */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Cinzel', serif;
+    line-height: 1.6;
+    color: var(--secondary);
+    background-color: var(--white);
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    width: 100vw !important;
+    max-width: 100% !important;
+    padding-top: var(--header-height, 80px); /* Restore default padding */
+}
+
+body.admin-bar .site-header {
+    top: 32px; /* Adjust for WP Admin Bar */
+}
+
+/* Adjust padding when admin bar is present */
+body.admin-bar {
+    padding-top: calc(var(--header-height, 80px) + 32px);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary);
+    transition: color var(--transition-fast);
+}
+
+a:hover {
+    color: var(--primary-light);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: var(--spacing-sm);
+    font-weight: 700;
+    color: var(--secondary-dark);
+}
+
+p {
+    margin-bottom: var(--spacing-sm);
+}
+
+ul, ol {
+    margin-left: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+}
+
+button, input, select, textarea {
+    font-family: inherit;
+}
+
+/* Utility Classes */
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.section {
+    padding: var(--spacing-xl) 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--primary);
+    color: var(--white);
+    border: none;
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.btn:hover {
+    background-color: var(--primary-light);
+    transform: translateY(-2px);
+    color: var(--white);
+}
+
+.btn-accent {
+    background-color: var(--accent);
+    color: var(--secondary-dark);
+}
+
+.btn-accent:hover {
+    background-color: var(--accent-light);
+    color: var(--secondary-dark);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+}
+
+.btn-outline:hover {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+/* Additional Components */
+/* Footer */
+footer {
+    background-color: var(--secondary-dark);
+    color: var(--light);
+    padding: var(--spacing-lg) 0;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-xl);
+}
+
+.footer-logo {
+    margin-bottom: var(--spacing-sm);
+}
+
+.footer-title {
+    color: var(--white);
+    margin-bottom: var(--spacing-sm);
+    font-size: 1.2rem;
+}
+
+.footer-links li {
+    margin-bottom: var(--spacing-xs);
+    list-style: none;
+}
+
+.footer-links a {
+    color: var(--light-gray);
+    transition: color var(--transition-fast);
+}
+
+.footer-links a:hover {
+    color: var(--accent);
+}
+
+.social-links {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-sm);
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transition: background-color var(--transition-fast);
+}
+
+.social-link:hover {
+    background-color: var(--accent);
+}
+
+.footer-bottom {
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-sm);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+}
+
+.copyright {
+    font-size: 0.9rem;
+}
+
+/* Global Responsive Rules */
+@media (max-width: 768px) {
+    :root {
+        --spacing-xl: 2rem;
+        --header-height: 60px;
+        --footer-height: 200px;
+    }
+    
+    .footer-content {
+        gap: var(--spacing-md);
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    /* Adjust body padding for potentially smaller mobile header */
+    body {
+        padding-top: var(--header-height, 60px);
+    }
+    body.admin-bar {
+        padding-top: calc(var(--header-height, 60px) + 46px);
+    }
+    
+    body.admin-bar .site-header {
+        top: 46px; /* Mobile admin bar height */
+    }
+}
+
+@media (max-width: 576px) {
+    :root {
+        --spacing-md: 15px;
+        --spacing-lg: 20px;
+        --spacing-xl: 30px;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Header Styles */
+.site-header,
+.compact-header {
+    /* Default solid background for non-homepage/non-transparent state */
+    background-color: var(--nav-bg-color, var(--white)); /* Use customizer or fallback white */
+    color: var(--nav-text-color, var(--secondary)); /* Use customizer or fallback text color */
+    box-shadow: var(--shadow-sm);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, height 0.3s ease, padding 0.3s ease;
+    height: var(--header-height, 80px);
+}
+
+/* Default link/text colors within header */
+.site-header .site-branding a,
+.site-header .main-navigation a,
+.site-header .nav-extras a {
+    color: var(--nav-text-color, var(--secondary));
+}
+
+/* Mobile menu toggle color */
+.site-header .menu-toggle span {
+     background-color: var(--nav-text-color, var(--secondary)) !important; /* Needs important? Check specificity */
+}
+
+/* Ensure hover states work with default text color */
+.site-header .site-branding a:hover,
+.site-header .main-navigation a:hover,
+.site-header .nav-extras a:hover {
+    color: var(--primary); /* Or adjust hover color if needed */
+}
+
+.compact-header {
+    padding: var(--spacing-xs) 0;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-sm) 0;
+    height: 100%;
+}
+
+.site-branding {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.site-branding img {
+    max-height: 60px;
+    width: auto;
+}
+
+.site-title {
+    margin: 0;
+    font-size: 1.5rem;
+    line-height: 1.2;
+}
+
+.site-description {
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--mid-gray);
+}
+
+.main-navigation {
+    display: flex;
+    align-items: center;
+}
+
+.main-navigation ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main-navigation li {
+    margin: 0 var(--spacing-sm);
+}
+
+.main-navigation a {
+    color: var(--secondary);
+    font-weight: 500;
+    padding: var(--spacing-xs) 0;
+    position: relative;
+    text-decoration: none;
+}
+
+.main-navigation a:hover {
+    color: var(--primary);
+}
+
+.main-navigation a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary);
+    transition: width var(--transition-medium);
+}
+
+.main-navigation a:hover::after {
+    width: 100%;
+}
+
+.nav-extras {
+    display: flex;
+    align-items: center;
+    margin-left: var(--spacing-md);
+    list-style: none;
+    padding: 0;
+}
+
+.nav-extras li {
+    margin-left: var(--spacing-sm);
+}
+
+.nav-extras a {
+    color: var(--secondary);
+    font-size: 1.25rem;
+    padding: var(--spacing-xs);
+    border-radius: var(--border-radius-sm);
+    transition: background-color var(--transition-fast);
+}
+
+.nav-extras a:hover {
+    color: var(--primary);
+    background-color: var(--light);
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    padding: var(--spacing-xs);
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: var(--secondary);
+    margin: 5px 0;
+    transition: transform var(--transition-medium), opacity var(--transition-medium);
+}
+
+/* Category Banner Styles */
+.category-banner {
+    position: relative;
+    height: 300px;
+    background-color: var(--light);
+    overflow: hidden;
+}
+
+.banner-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.3;
+}
+
+.banner-content {
+    position: relative;
+    z-index: 1;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: var(--spacing-xl) var(--spacing-md);
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.category-title {
+    font-size: 3rem;
+    color: var(--secondary-dark);
+    margin-bottom: var(--spacing-md);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.breadcrumbs {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    color: var(--secondary);
+}
+
+.breadcrumb-item {
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumb-item:not(:last-child)::after {
+    content: '/';
+    margin-left: var(--spacing-sm);
+    color: var(--mid-gray);
+}
+
+@media (max-width: 768px) {
+    .site-branding {
+        /* Allow branding to take up space, push nav to the end */
+        flex-grow: 1;
+        text-align: center; /* Center logo/title if needed */
+        /* Remove margin-right if it exists */
+        margin-right: 0;
+        /* Add margin to space from menu toggle if needed */
+        margin-left: var(--spacing-sm);
+    }
+
+    .menu-toggle {
+        display: block !important; /* Show hamburger icon */
+        z-index: 1001;
+        order: -1;
+    }
+
+    .main-navigation {
+       display: none !important; /* Hide nav by default */
+       order: 1;
+       position: absolute;
+       top: 100%;
+       left: 0;
+       width: 100%;
+       background-color: var(--secondary-dark);
+       box-shadow: var(--shadow-md);
+       padding: var(--spacing-sm) 0;
+    }
+
+    .main-navigation.active {
+        display: block !important; /* Show nav when active */
+    }
+
+    .main-navigation ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .main-navigation li {
+        margin: 0;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .main-navigation li:last-child {
+        border-bottom: none;
+    }
+
+    .main-navigation a {
+        display: block;
+        padding: var(--spacing-md) var(--spacing-sm);
+        color: var(--white);
+    }
+    
+    .main-navigation a:hover {
+        background-color: var(--primary);
+        color: var(--white);
+    }
+    
+    .main-navigation a::after {
+        display: none;
+    }
+    
+    .nav-extras {
+        display: none;
+    }
+    
+    body {
+        padding-top: var(--header-height, 60px);
+    }
+    body.admin-bar {
+        padding-top: calc(var(--header-height, 60px) + 46px); /* Adjust for mobile admin bar */
+    }
+    body.admin-bar .site-header {
+        top: 46px; /* Mobile admin bar height */
+    }
+
+    .category-banner {
+        height: 200px;
+    }
+
+    .category-title {
+        font-size: 2rem;
+    }
+}
+
+/* Shop Styles */
+.shop-container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: var(--spacing-lg) var(--spacing-md);
+}
+
+.shop-header {
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+}
+
+.page-title {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: var(--spacing-md);
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.no-products-found {
+    text-align: center;
+    padding: var(--spacing-xl) 0;
+}
+
+.no-products-found h2 {
+    color: var(--primary);
+    margin-bottom: var(--spacing-md);
+}
+
+.no-products-found p {
+    color: var(--secondary);
+    margin-bottom: var(--spacing-lg);
+    font-size: 1.1rem;
+}
+
+.no-products-found .btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+}
+
+/* WooCommerce Product Grid Styles */
+.woocommerce ul.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.woocommerce ul.products li.product {
+    float: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.woocommerce ul.products li.product .product-inner {
+    background: #fff;
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.woocommerce ul.products li.product .product-inner:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.woocommerce ul.products li.product .product-image-container {
+    position: relative;
+    padding-top: 100%;
+    overflow: hidden;
+}
+
+.woocommerce ul.products li.product .attachment-woocommerce_thumbnail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.woocommerce ul.products li.product:hover .attachment-woocommerce_thumbnail {
+    transform: scale(1.05);
+}
+
+.woocommerce ul.products li.product .onsale,
+.woocommerce ul.products li.product .new-badge {
+    position: absolute;
+    top: 10px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    z-index: 1;
+}
+
+.woocommerce ul.products li.product .onsale {
+    right: 10px;
+    background: #ff4444;
+    color: #fff;
+}
+
+.woocommerce ul.products li.product .new-badge {
+    left: 10px;
+    background: #4CAF50;
+    color: #fff;
+}
+
+.woocommerce ul.products li.product .product-info {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.woocommerce ul.products li.product .woocommerce-loop-product__title {
+    font-size: 1.125rem;
+    margin: 0 0 0.5rem;
+    padding: 0;
+    color: #333;
+}
+
+.woocommerce ul.products li.product .price {
+    color: #2c3338;
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.woocommerce ul.products li.product .price del {
+    color: #666;
+    opacity: 0.5;
+    margin-right: 0.5rem;
+}
+
+.woocommerce ul.products li.product .price ins {
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.woocommerce ul.products li.product .product-short-description {
+    font-size: 0.875rem;
+    color: #666;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.woocommerce ul.products li.product .button {
+    margin-top: auto;
+    width: 100%;
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 0.75rem;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.woocommerce ul.products li.product .button:hover {
+    background-color: #000;
+}
+
+.woocommerce ul.products li.product .button.loading {
+    opacity: 0.7;
+    padding-right: 2.5rem;
+}
+
+.woocommerce ul.products li.product .button.added {
+    background-color: #4CAF50;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .woocommerce ul.products {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1rem;
+    }
+
+    .woocommerce ul.products li.product .product-info {
+        padding: 1rem;
+    }
+
+    .woocommerce ul.products li.product .woocommerce-loop-product__title {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .products-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: var(--spacing-md);
+    }
+    
+    .page-title {
+        font-size: 2rem;
+    }
+}
+
+/* Global Layout Styles */
+#page {
+    width: 100vw !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden;
+}
+
+.site-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.content-area {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.site-main {
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Container Full Width */
+.container-fluid {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* No top padding needed - we want true full screen */
+    padding: 0;
+    margin: 0;
+    z-index: 1;
+    text-align: center;
+    min-height: 100vh;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+/* Make sure the hero content sits below the transparent header */
+.hero-content {
+    padding-top: 60px; /* Account for header height */
+    max-width: 800px;
+    text-align: center;
+}
+
+/* Apply height and overflow specifically for homepage scrolling */
+body.home,
+body.page-template-front-page {
+    height: 100%;
+    overflow: hidden !important; /* Prevent scrolling past sections */
+}
+
+/* Hide footer specifically on the front page */
+body.home .site-footer,
+body.page-template-front-page .site-footer {
+    display: none;
+}
+
+/* === Homepage Header Control === */
+/* Completely remove header on the homepage with no exceptions */
+body.home #masthead,
+body.home .site-header,
+body.page-template-front-page #masthead,
+body.page-template-front-page .site-header {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+
+/* Remove the scrolled state exception rule that was making the header appear on scroll */
+body.home #masthead.scrolled,
+body.page-template-front-page #masthead.scrolled {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+
+/* Make sure the hero takes up the full viewport without any header space */
+body.home,
+body.page-template-front-page {
+    padding-top: 0 !important;
+}
+
+.hero-section {
+    padding-top: 0;
+    margin-top: 0;
+}
+
+/* Default header styles for non-homepage remain the same */
+.site-header {
+    /* Styles for header when it's normally visible */
+    background-color: var(--nav-bg-color, var(--white)); 
+    color: var(--nav-text-color, var(--secondary)); 
+    box-shadow: var(--shadow-sm);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    height: var(--header-height, 80px);
+    /* ... etc ... */
+}
+
+.site-header .site-branding a,
+.site-header .main-navigation a,
+.site-header .nav-extras a,
+.site-header .menu-toggle span { /* Combined */
+    color: var(--nav-text-color, var(--secondary));
+    background-color: transparent;
+}
+.site-header .menu-toggle span {
+    background-color: var(--nav-text-color, var(--secondary)) !important;
+}
+.site-header .site-branding a:hover,
+.site-header .main-navigation a:hover,
+.site-header .nav-extras a:hover {
+    color: var(--primary); 
+}
+
+.compact-header {
+    padding: var(--spacing-xs) 0;
+}
+
+/* Header styling for homepage - completely reworked */
+body.home #masthead {
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    pointer-events: auto; /* Ensure clicks still register */
+    transition: all 0.4s ease;
+    opacity: 0; /* Start invisible */
+}
+
+/* When scrolled, make header visible and styled */
+body.home #masthead.scrolled {
+    background-color: #ffffff !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15) !important;
+    opacity: 1;
+}
+
+/* Make sure navigation items are visible when header is shown */
+body.home #masthead.scrolled .site-branding,
+body.home #masthead.scrolled .main-navigation,
+body.home #masthead.scrolled .menu-toggle {
+    opacity: 1;
+}
+
+/* Ensure hero section starts at the top of the viewport */
+.hero-section {
+    min-height: 100vh;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+/* Default header styles for non-homepage remain the same */
+.site-header {
+    /* Styles for header when it's normally visible */
+    background-color: var(--nav-bg-color, var(--white)); 
+    color: var(--nav-text-color, var(--secondary)); 
+    box-shadow: var(--shadow-sm);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    height: var(--header-height, 80px);
+    /* ... etc ... */
+}
+
+.site-header .site-branding a,
+.site-header .main-navigation a,
+.site-header .nav-extras a,
+.site-header .menu-toggle span { /* Combined */
+    color: var(--nav-text-color, var(--secondary));
+    background-color: transparent;
+}
+.site-header .menu-toggle span {
+    background-color: var(--nav-text-color, var(--secondary)) !important;
+}
+.site-header .site-branding a:hover,
+.site-header .main-navigation a:hover,
+.site-header .nav-extras a:hover {
+    color: var(--primary); 
+}
+
+.compact-header {
+    padding: var(--spacing-xs) 0;
+}
+
+/* Header styling for homepage */
+body.home #masthead {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    /* Change from display:none to transparent with transition */
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Make header visible and opaque when scrolled */
+body.home #masthead.scrolled {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
+    /* Change from display:block to full opacity */
+    opacity: 1 !important;
+} 

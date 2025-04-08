@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="600" height="20" viewBox="0 0 600 20" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="rope-pattern" patternUnits="userSpaceOnUse" width="60" height="20">
+      <!-- Rope strands -->
+      <path d="M0,10 C5,5 10,15 15,10 C20,5 25,15 30,10 C35,5 40,15 45,10 C50,5 55,15 60,10" 
+            stroke="#8B4513" 
+            stroke-width="2.5" 
+            fill="none" 
+            opacity="0.9" />
+      
+      <!-- Secondary rope detail -->
+      <path d="M0,10 C5,15 10,5 15,10 C20,15 25,5 30,10 C35,15 40,5 45,10 C50,15 55,5 60,10" 
+            stroke="#A0522D" 
+            stroke-width="2.5" 
+            fill="none" 
+            opacity="0.7" />
+      
+      <!-- Highlights -->
+      <path d="M0,10 C5,5 10,15 15,10 C20,5 25,15 30,10 C35,5 40,15 45,10 C50,5 55,15 60,10" 
+            stroke="#D2B48C" 
+            stroke-width="0.75" 
+            fill="none" 
+            opacity="0.4" />
+      
+      <!-- Texture dots -->
+      <circle cx="7.5" cy="7.5" r="0.5" fill="#5D2906" opacity="0.5" />
+      <circle cx="22.5" cy="7.5" r="0.5" fill="#5D2906" opacity="0.5" />
+      <circle cx="37.5" cy="7.5" r="0.5" fill="#5D2906" opacity="0.5" />
+      <circle cx="52.5" cy="7.5" r="0.5" fill="#5D2906" opacity="0.5" />
+      
+      <circle cx="15" cy="12.5" r="0.5" fill="#5D2906" opacity="0.5" />
+      <circle cx="30" cy="12.5" r="0.5" fill="#5D2906" opacity="0.5" />
+      <circle cx="45" cy="12.5" r="0.5" fill="#5D2906" opacity="0.5" />
+    </pattern>
+  </defs>
+  
+  <!-- Background fill for the pattern -->
+  <rect width="600" height="20" fill="url(#rope-pattern)" />
+  
+  <!-- Add edge decorations -->
+  <circle cx="5" cy="10" r="4" fill="#8B4513" opacity="0.8" />
+  <circle cx="595" cy="10" r="4" fill="#8B4513" opacity="0.8" />
+  
+  <!-- Edge highlights -->
+  <circle cx="5" cy="10" r="2" fill="#D2B48C" opacity="0.4" />
+  <circle cx="595" cy="10" r="2" fill="#D2B48C" opacity="0.4" />
+</svg> 

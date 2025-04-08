@@ -1,0 +1,288 @@
+/**
+ * Cuevas Western Wear - Brand Elements
+ * Brand reinforcement visual elements and components
+ */
+
+/* Brand section styles */
+.brand-section {
+  padding: var(--spacing-xl) 0;
+  background-color: rgba(255, 248, 220, 0.5);
+  position: relative;
+}
+
+.brand-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(to right, var(--primary-dark), var(--accent), var(--primary-dark));
+}
+
+/* Brand pattern background */
+.brand-pattern {
+  position: relative;
+  overflow: hidden;
+}
+
+.brand-pattern::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../img/western-pattern.svg');
+  background-size: 300px;
+  opacity: 0.05;
+  z-index: -1;
+}
+
+/* Heritage timeline component */
+.heritage-timeline {
+  position: relative;
+  padding: var(--spacing-lg) 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.timeline-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background-color: var(--accent);
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: var(--spacing-lg);
+  display: flex;
+}
+
+.timeline-item:nth-child(odd) {
+  justify-content: flex-start;
+  padding-right: 50%;
+}
+
+.timeline-item:nth-child(even) {
+  justify-content: flex-end;
+  padding-left: 50%;
+}
+
+.timeline-content {
+  background-color: var(--white);
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+  width: 80%;
+  position: relative;
+}
+
+.timeline-content::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  width: 20px;
+  height: 2px;
+  background-color: var(--accent);
+}
+
+.timeline-item:nth-child(odd) .timeline-content::after {
+  right: -20px;
+}
+
+.timeline-item:nth-child(even) .timeline-content::after {
+  left: -20px;
+}
+
+.timeline-date {
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+/* Brand values component */
+.brand-values {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-lg);
+  margin: var(--spacing-lg) 0;
+}
+
+.value-card {
+  background-color: var(--white);
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.value-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.value-icon {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.value-title {
+  font-size: 1.2rem;
+  margin-bottom: var(--spacing-xs);
+  color: var(--primary-dark);
+}
+
+/* Craftsmanship showcase */
+.craftsmanship-showcase {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: var(--spacing-md);
+  margin: var(--spacing-lg) 0;
+}
+
+.craft-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--border-radius-md);
+}
+
+.craft-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform var(--transition-medium);
+}
+
+.craft-item:hover .craft-image {
+  transform: scale(1.05);
+}
+
+.craft-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--spacing-md);
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  color: var(--white);
+}
+
+.craft-title {
+  font-size: 1.2rem;
+  margin-bottom: var(--spacing-xs);
+}
+
+/* Artisan profile */
+.artisan-profile {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  margin: var(--spacing-lg) 0;
+  padding: var(--spacing-md);
+  background-color: var(--white);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.artisan-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent);
+}
+
+.artisan-info {
+  flex: 1;
+  min-width: 200px;
+}
+
+.artisan-name {
+  font-size: 1.2rem;
+  color: var(--primary-dark);
+  margin-bottom: var(--spacing-xs);
+}
+
+.artisan-title {
+  font-style: italic;
+  color: var(--primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Brand story block */
+.brand-story {
+  position: relative;
+  padding: var(--spacing-lg);
+  margin: var(--spacing-lg) 0;
+  background-color: rgba(139, 69, 19, 0.05);
+  border-left: 4px solid var(--primary);
+}
+
+.brand-story-title {
+  font-size: 1.8rem;
+  margin-bottom: var(--spacing-md);
+  color: var(--primary-dark);
+}
+
+/* Brand values section with western styling */
+.western-values-section {
+  background-color: var(--light);
+  padding: var(--spacing-xl) 0;
+  position: relative;
+}
+
+.western-values-section::before,
+.western-values-section::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 20px;
+  background-image: url('../img/rope-border.svg');
+  background-repeat: repeat-x;
+  background-size: contain;
+}
+
+.western-values-section::before {
+  top: 0;
+}
+
+.western-values-section::after {
+  bottom: 0;
+  transform: rotate(180deg);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .timeline-line {
+    left: 30px;
+  }
+  
+  .timeline-item:nth-child(odd),
+  .timeline-item:nth-child(even) {
+    justify-content: flex-start;
+    padding-right: 0;
+    padding-left: 60px;
+  }
+  
+  .timeline-item:nth-child(odd) .timeline-content::after,
+  .timeline-item:nth-child(even) .timeline-content::after {
+    left: -30px;
+    right: auto;
+  }
+  
+  .timeline-content {
+    width: 100%;
+  }
+  
+  .craftsmanship-showcase {
+    grid-template-columns: 1fr;
+  }
+} 

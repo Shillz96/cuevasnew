@@ -1,0 +1,454 @@
+/**
+ * Homepage Styles for Cuevas Western Wear Theme
+ */
+
+/* General Homepage Sections */
+.homepage-section {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Specific section overrides if they should NOT flex-center */
+.hero-section,
+.split-slideshow,
+.additional-content-section { 
+    /* These sections might have their own layout needs, override general flex rules */
+    display: block; /* Or their specific display type */
+    justify-content: initial;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 0 2rem;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--color-text, #3E2723);
+    margin-bottom: 1rem;
+    opacity: 0;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: var(--color-text, #3E2723);
+    opacity: 0;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.section-footer {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.section-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Hero Section */
+.hero-section {
+    padding: 0;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: var(--white);
+    z-index: 2;
+    width: 90%;
+    max-width: 800px;
+}
+
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: inherit;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    color: inherit;
+}
+
+/* Style for the new button container */
+.hero-button-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem; /* Space between buttons */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    margin-top: 2rem; /* Space above buttons */
+}
+
+.hero-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: var(--color-button, #A52A2A);
+    color: var(--white);
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border: 2px solid transparent;
+    border-radius: var(--border-radius-md, 5px);
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+/* Reverted hover rule */
+.hero-button:hover {
+    background-color: transparent;
+    border-color: var(--white);
+    transform: translateY(-5px);
+    color: var(--white);
+}
+
+/* Gallery Section (Split Slideshow) */
+.split-slideshow {
+    height: 100vh !important;
+    min-height: 100vh !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Slideshow Nav Styles */
+.slideshow-nav {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+    display: flex;
+    gap: 10px;
+}
+
+.prev-slide, 
+.next-slide {
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.prev-slide:hover, 
+.next-slide:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    transform: scale(1.1);
+}
+
+/* Ensure slideshow can be scrolled while within its boundaries */
+.slider {
+    overflow: visible !important;
+}
+
+/* Add support for touch devices */
+@media (max-width: 768px) {
+    .slideshow-nav {
+        bottom: 15px;
+        right: 15px;
+    }
+    
+    .prev-slide, 
+    .next-slide {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+    }
+}
+
+/* Featured Products Section */
+.featured-products-section {
+    background-color: #f9f7f4;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 2rem;
+    opacity: 0;
+}
+
+.product-card {
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.product-link {
+    text-decoration: none;
+    color: var(--color-text, #3E2723);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-image {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.05);
+}
+
+.product-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    margin: 1rem;
+    text-align: center;
+}
+
+.product-price {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    color: var(--color-accent, #8B4513);
+}
+
+.product-add-to-cart {
+    margin: 0 1rem 1rem;
+    text-align: center;
+}
+
+.product-add-to-cart .button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--color-button, #A52A2A);
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.product-add-to-cart .button:hover {
+    background-color: var(--color-button-hover, #D2691E);
+}
+
+.view-all-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: var(--color-button, #A52A2A);
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.view-all-button:hover {
+    background-color: var(--color-button-hover, #D2691E);
+}
+
+/* Shop Categories Section */
+.shop-categories-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.shop-categories-section .section-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+}
+
+.shop-categories-section .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.shop-categories-section .section-content {
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    z-index: 2;
+    color: var(--white); /* Default text color for section */
+}
+
+.shop-categories-section .section-header {
+    margin-bottom: 40px;
+}
+
+.shop-categories-section .section-title {
+    color: var(--white);
+    font-size: 3rem;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.shop-categories-section .section-subtitle {
+    color: var(--white);
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.shop-categories-section .cta-buttons-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* Styles for the btn class apply here now */
+
+.shop-categories-section .category-icon {
+    font-size: 24px;
+    margin-bottom: 10px;
+    /* Ensure icon inherits white color */
+    color: inherit; 
+}
+
+.shop-categories-section .category-name {
+    font-size: 18px;
+     /* Ensure name inherits white color */
+    color: inherit;
+}
+
+/* Mobile styles for shop categories */
+@media (max-width: 768px) {
+    .shop-categories-section .cta-buttons-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .shop-categories-section .cta-button.btn { /* Target button specifically if needed */
+        width: 80%;
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .products-grid,
+    .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .products-grid,
+    .categories-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .homepage-section {
+        min-height: 100vh;
+    }
+} 
+ 
+ 

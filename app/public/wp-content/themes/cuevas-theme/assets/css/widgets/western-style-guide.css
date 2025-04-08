@@ -1,0 +1,250 @@
+/**
+ * Western Style Guide Widget Styles
+ * Custom styling for the style guide widget that helps match boots with outfits
+ */
+
+.western-style-guide {
+  background-color: var(--white);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  margin: var(--spacing-lg) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Western style border decoration */
+.western-style-guide::before,
+.western-style-guide::after {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background-image: url('../img/western-corner.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 1;
+  opacity: 0.7;
+}
+
+.western-style-guide::before {
+  top: 10px;
+  left: 10px;
+}
+
+.western-style-guide::after {
+  bottom: 10px;
+  right: 10px;
+  transform: rotate(180deg);
+}
+
+/* Widget header */
+.widget-header {
+  text-align: center;
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: linear-gradient(to right, rgba(139, 69, 19, 0.9), rgba(166, 124, 82, 0.9));
+  color: var(--white);
+  position: relative;
+}
+
+.widget-header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: url('../img/rope-border.svg') repeat-x center;
+}
+
+.widget-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  margin-bottom: var(--spacing-xs);
+}
+
+.widget-subtitle {
+  font-style: italic;
+  opacity: 0.9;
+}
+
+/* Style Guide Tabs */
+.style-guide-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: rgba(230, 194, 0, 0.1);
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.tab-button {
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: transparent;
+  border: none;
+  border-radius: var(--border-radius-sm) var(--border-radius-sm) 0 0;
+  color: var(--primary);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  position: relative;
+}
+
+.tab-button::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--accent);
+  transform: scaleX(0);
+  transition: transform var(--transition-fast);
+}
+
+.tab-button:hover {
+  color: var(--primary-dark);
+}
+
+.tab-button.active {
+  color: var(--primary-dark);
+  background-color: rgba(230, 194, 0, 0.2);
+}
+
+.tab-button.active::after {
+  transform: scaleX(1);
+}
+
+/* Tab Content */
+.tab-content {
+  display: none;
+  padding: var(--spacing-md);
+}
+
+.tab-content.active {
+  display: block;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Style Outfit */
+.style-outfit {
+  display: flex;
+  gap: var(--spacing-lg);
+  align-items: flex-start;
+}
+
+.outfit-image {
+  flex: 0 0 40%;
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+}
+
+.outfit-image img {
+  width: 100%;
+  height: auto;
+  transition: transform var(--transition-medium);
+}
+
+.outfit-image:hover img {
+  transform: scale(1.05);
+}
+
+.outfit-details {
+  flex: 1;
+}
+
+.outfit-details h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  color: var(--primary-dark);
+  margin-bottom: var(--spacing-sm);
+  padding-bottom: var(--spacing-xs);
+  border-bottom: 2px solid var(--accent);
+  display: inline-block;
+}
+
+.outfit-items {
+  list-style: none;
+  margin: var(--spacing-sm) 0;
+  padding: 0;
+}
+
+.outfit-items li {
+  margin-bottom: var(--spacing-xs);
+  padding-left: 24px;
+  position: relative;
+}
+
+.outfit-items li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: bold;
+}
+
+.item-type {
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.outfit-description {
+  margin: var(--spacing-sm) 0;
+  font-style: italic;
+  color: var(--secondary);
+  line-height: 1.6;
+}
+
+.shop-this-look {
+  margin-top: var(--spacing-sm);
+  display: inline-block;
+}
+
+/* Footer */
+.style-guide-footer {
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: rgba(230, 194, 0, 0.1);
+  text-align: center;
+  border-top: 1px solid var(--light-gray);
+  font-style: italic;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .style-outfit {
+    flex-direction: column;
+  }
+  
+  .outfit-image {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: var(--spacing-md);
+  }
+}
+
+@media (max-width: 768px) {
+  .style-guide-tabs {
+    flex-wrap: wrap;
+  }
+  
+  .tab-button {
+    flex: 1 1 auto;
+    text-align: center;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: 0.9rem;
+  }
+  
+  .widget-title {
+    font-size: 1.5rem;
+  }
+  
+  .outfit-details h4 {
+    font-size: 1.2rem;
+  }
+} 

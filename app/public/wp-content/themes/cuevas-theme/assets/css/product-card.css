@@ -1,0 +1,167 @@
+/**
+ * Product Card Component
+ * 
+ * General styles for product cards used in WooCommerce loops (e.g., shop, related products).
+ */
+
+/* General Product Card Container Styling */
+.woocommerce ul.products li.product .product-card,
+li.product .product-card /* Add non-WC context if needed */ {
+    display: flex;          /* Use flexbox for the main card */
+    flex-direction: column; /* Stack image and info vertically */
+    /* height: 100%; <- REMOVED to allow natural height */           
+    background-color: #fff; /* Default background */
+    border: 1px solid #eee; /* Default subtle border */
+    overflow: hidden;       /* Prevent content spillover */
+    text-align: center;     /* Center-align text by default */
+    margin-bottom: 0; /* Ensure no extra margin from li.product */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add general hover transition */
+}
+
+/* General Link Styling within Card */
+.woocommerce ul.products li.product .product-card a.woocommerce-LoopProduct-link,
+li.product .product-card a.woocommerce-LoopProduct-link {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Make link fill the card */
+    text-decoration: none;
+    color: inherit;
+}
+
+/* General Image Container Styling */
+.woocommerce ul.products li.product .product-card .product-image-container,
+li.product .product-card .product-image-container {
+    position: relative;
+    width: 100%;
+    background-color: #f8f8f8; /* Fallback bg */
+    /* Optional: Enforce aspect ratio for consistent image area */
+    /* aspect-ratio: 1 / 1; */
+    overflow: hidden;
+}
+
+/* General Image Styling */
+.woocommerce ul.products li.product .product-card .product-image-container img.product-image,
+li.product .product-card .product-image-container img.product-image {
+    display: block;
+    width: 100%;
+    height: auto; /* Let height adjust based on width */
+     /* If using aspect-ratio above, uncomment object-fit */
+    /* object-fit: cover; */
+    transition: transform 0.5s ease;
+}
+
+/* General Badge Styling */
+.woocommerce ul.products li.product .product-card .product-image-container .product-badge,
+li.product .product-card .product-image-container .product-badge {
+    position: absolute;
+    top: 10px;
+    padding: 4px 8px;
+    font-size: 0.8em;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 3px;
+    z-index: 2;
+}
+
+.woocommerce ul.products li.product .product-card .product-image-container .badge-sale,
+.woocommerce ul.products li.product .product-card .product-image-container .onsale,
+li.product .product-card .product-image-container .badge-sale,
+li.product .product-card .product-image-container .onsale {
+    background-color: #A52A2A; /* Brown */
+    left: 10px;
+}
+
+.woocommerce ul.products li.product .product-card .product-image-container .badge-new,
+li.product .product-card .product-image-container .badge-new {
+    background-color: #2E8B57; /* SeaGreen */
+    right: 10px;
+}
+
+/* General Info Section Styling - Should be VISIBLE by default */
+.woocommerce ul.products li.product .product-card .product-info,
+li.product .product-card .product-info {
+    padding: 15px;          
+    display: flex;          
+    flex-direction: column; 
+    flex-grow: 1;           
+    justify-content: space-between; 
+    min-height: 150px; /* Add a minimum height to ensure space */
+}
+
+/* General Text/Element Styling within Info */
+.woocommerce ul.products li.product .product-card .product-info .product-title,
+li.product .product-card .product-info .product-title {
+    margin-bottom: 0.5em;
+    font-size: 1em; 
+    color: #3E2723; 
+    font-weight: 500;
+    line-height: 1.3;
+    height: 2.6em; /* Approx 2 lines based on line-height */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* Optional: Use -webkit-line-clamp for multi-line ellipsis */
+    /*
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;  
+    */
+}
+
+.woocommerce ul.products li.product .product-card .product-info .product-short-description,
+li.product .product-card .product-info .product-short-description {
+    display: none; /* Hide short description in loops for brevity */
+    /* Keep styles below if you decide to show it */
+    /* 
+    margin-bottom: 1em;
+    font-size: 0.9em;
+    color: #666;
+    flex-grow: 1; 
+    min-height: 2.7em; 
+    */
+}
+
+.woocommerce ul.products li.product .product-card .product-info .product-price,
+.woocommerce ul.products li.product .product-card .product-info .price,
+li.product .product-card .product-info .product-price,
+li.product .product-card .product-info .price {
+    margin-bottom: 1em;
+    font-weight: bold;
+    color: #A52A2A; /* Brown */
+    display: block;
+    font-size: 1.1em;
+}
+
+.woocommerce ul.products li.product .product-card .product-info .button,
+li.product .product-card .product-info .button {
+    /* margin-top: auto; <- Only use if justify-content is not space-between */
+    width: 100%; /* Make button full width */
+    max-width: 200px; /* Optional: Limit button width */
+    margin-left: auto; /* Center button if max-width is set */
+    margin-right: auto; /* Center button if max-width is set */
+    padding: 8px 15px; /* Adjust button padding */
+    font-size: 0.9em;
+    text-transform: uppercase;
+    background-color: #8B4513; /* Match add-to-cart */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.woocommerce ul.products li.product .product-card .product-info .button:hover,
+li.product .product-card .product-info .button:hover {
+     background-color: #59331D; /* Match add-to-cart hover */
+}
+
+/* General Hover Effects (Subtle) */
+.woocommerce ul.products li.product .product-card:hover,
+li.product .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.woocommerce ul.products li.product .product-card:hover .product-image-container img.product-image,
+li.product .product-card:hover .product-image-container img.product-image {
+    transform: scale(1.03);
+} 

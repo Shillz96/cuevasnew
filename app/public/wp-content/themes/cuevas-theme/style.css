@@ -1,0 +1,17 @@
+/*
+Theme Name: Cuevas Western Wear
+Theme URI: https://example.com/cuevas-western-wear-theme
+Author: Your Name or Company
+Author URI: https://example.com/
+Description: A modern, responsive WordPress theme for Cuevas Western Wear e-commerce store. Designed for seamless WooCommerce integration with a focus on product display and user experience.
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Tags: woocommerce, e-commerce, custom-header, custom-menu, featured-images, theme-options, responsive-layout
+Text Domain: cuevas
+*/
+
+/*
+This file is required by WordPress and contains the theme header information.
+The main styles for this theme are enqueued via functions.php and located in assets/css/main.css
+*/ 

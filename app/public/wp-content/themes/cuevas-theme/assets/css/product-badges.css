@@ -1,0 +1,145 @@
+/**
+ * Cuevas Western Wear - Product Badges
+ * Stylish product badges for various product states
+ */
+
+/* Badge base styles */
+.product-badge {
+  position: absolute;
+  z-index: 10;
+  padding: 6px 12px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: var(--border-radius-sm);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Badge positioning */
+.product-badge {
+  top: 12px;
+  left: 12px;
+}
+
+.product-badge + .product-badge {
+  top: 50px;
+}
+
+/* Badge types */
+.badge-sale {
+  background-color: var(--accent);
+  color: var(--primary-dark);
+}
+
+.badge-new {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.badge-bestseller {
+  background-color: #b88b4a;
+  color: var(--white);
+}
+
+.badge-limited {
+  background-color: #9e2c2c;
+  color: var(--white);
+}
+
+.badge-handcrafted {
+  background-color: #5b4421;
+  color: var(--white);
+}
+
+.badge-premium {
+  background-color: #333;
+  color: #d4af37;
+}
+
+.badge-usa {
+  background-color: #3c3b6e;
+  color: var(--white);
+}
+
+.badge-lowstock {
+  background-color: #ffc107;
+  color: #333;
+}
+
+/* Badge with icon */
+.product-badge-icon {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.product-badge-icon i {
+  font-size: 0.75rem;
+}
+
+/* Leather badge (stylized) */
+.badge-leather {
+  background-color: #5d4037;
+  color: #d7ccc8;
+  border: 1px solid #8d6e63;
+}
+
+/* Western styled badge with stitching effect */
+.badge-western {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: var(--primary-dark);
+  color: var(--accent);
+  padding: 8px 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.7rem;
+  border-radius: 0;
+  box-shadow: none;
+  border: 1px solid var(--accent);
+  outline: 1px solid var(--primary-dark);
+  outline-offset: 2px;
+}
+
+/* Badge with decorative western elements */
+.badge-decorative {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: var(--primary-dark);
+  color: var(--light);
+  padding: 10px 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  
+  /* Decorative elements */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badge-decorative::before,
+.badge-decorative::after {
+  content: "★";
+  display: inline-block;
+  margin: 0 5px;
+  color: var(--accent);
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .product-badge {
+    padding: 4px 8px;
+    font-size: 0.65rem;
+  }
+  
+  .badge-decorative {
+    padding: 6px 12px;
+    font-size: 0.7rem;
+  }
+} 

@@ -1,0 +1,221 @@
+/**
+ * Cuevas Western Wear - Western Icons
+ * Custom western-themed icons and decorative elements
+ */
+
+/* Icon base styles */
+.western-icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+  position: relative;
+  font-size: inherit;
+}
+
+/* Icon container (for background shapes) */
+.icon-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--primary-light);
+  color: var(--white);
+}
+
+.icon-container.square {
+  border-radius: var(--border-radius-sm);
+}
+
+.icon-container.diamond {
+  transform: rotate(45deg);
+}
+
+.icon-container.diamond i {
+  transform: rotate(-45deg);
+}
+
+/* Western-themed decorative elements */
+.western-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: var(--spacing-md) 0;
+  height: 20px;
+  color: var(--accent);
+}
+
+.western-divider::before,
+.western-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: var(--accent);
+  opacity: 0.5;
+}
+
+.western-divider-icon {
+  margin: 0 var(--spacing-sm);
+}
+
+/* Stylized boot icon */
+.icon-boot {
+  position: relative;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+}
+
+.icon-boot::before {
+  content: "\f569"; /* Font Awesome boot icon code */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
+/* Stylized hat icon */
+.icon-hat {
+  position: relative;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+}
+
+.icon-hat::before {
+  content: "\f7a7"; /* Font Awesome hat cowboy icon code */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
+/* Category icons with background */
+.category-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: rgba(139, 69, 19, 0.1);
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  margin-bottom: var(--spacing-sm);
+  font-size: 1.5rem;
+  transition: all var(--transition-fast);
+}
+
+.category-icon:hover {
+  background-color: var(--primary);
+  color: var(--white);
+  transform: scale(1.1);
+}
+
+/* Leather texture icon background */
+.icon-leather {
+  background-color: #5d4037;
+  background-image: linear-gradient(45deg, 
+    rgba(0,0,0,0.1) 25%, 
+    transparent 25%, 
+    transparent 50%, 
+    rgba(0,0,0,0.1) 50%, 
+    rgba(0,0,0,0.1) 75%, 
+    transparent 75%, 
+    transparent);
+  background-size: 4px 4px;
+  color: var(--light);
+}
+
+/* Western style decorative corner */
+.corner-decoration {
+  position: relative;
+}
+
+.corner-decoration::before,
+.corner-decoration::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-color: var(--accent);
+  border-style: solid;
+  border-width: 0;
+}
+
+.corner-decoration::before {
+  top: 0;
+  left: 0;
+  border-top-width: 2px;
+  border-left-width: 2px;
+}
+
+.corner-decoration::after {
+  bottom: 0;
+  right: 0;
+  border-bottom-width: 2px;
+  border-right-width: 2px;
+}
+
+/* Feature icons for product highlights */
+.feature-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+}
+
+.feature-icon i {
+  color: var(--primary);
+  font-size: 1.2em;
+}
+
+.feature-text {
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+/* Star rating custom styling */
+.star-rating {
+  color: var(--accent);
+  font-size: 0.9rem;
+}
+
+.star-rating .empty {
+  color: rgba(212, 180, 131, 0.3);
+}
+
+/* Custom bullet points */
+ul.western-list {
+  list-style: none;
+  padding-left: 1.5em;
+}
+
+ul.western-list li {
+  position: relative;
+  margin-bottom: 0.5em;
+}
+
+ul.western-list li::before {
+  content: "✦";
+  position: absolute;
+  left: -1.5em;
+  color: var(--primary);
+}
+
+/* Lasso style border */
+.lasso-border {
+  position: relative;
+  padding: var(--spacing-md);
+}
+
+.lasso-border::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid var(--primary);
+  border-radius: var(--border-radius-md);
+  opacity: 0.7;
+  pointer-events: none;
+} 

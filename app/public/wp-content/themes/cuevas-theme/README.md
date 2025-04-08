@@ -63,6 +63,20 @@ theme/
 │   ├── content-product.php       # Product display in loops (uses hooks)
 │   ├── content-single-product.php # Main content for single product page
 │   └── single-product.php        # Single product page template shell
+├── docs/                         # Theme documentation
+│   ├── Business Context.md       # Project overview and brand identity
+│   ├── Features/                 # Documentation for specific features
+│   │   ├── cart-page.md          # Cart page implementation details
+│   │   ├── category-page.md      # Category page implementation details
+│   │   ├── home-page.md          # Homepage implementation details
+│   │   ├── product-page.md       # Product page implementation details
+│   │   ├── shop-page.md          # Shop page implementation details
+│   │   ├── site-footer.md        # Footer implementation details
+│   │   ├── site-header.md        # Header implementation details
+│   │   └── split-slideshow.md    # Slideshow implementation details
+│   ├── Implementation Guidelines.md # Coding standards and implementation details
+│   ├── Validation Criteria.md    # Testing and validation requirements
+│   └── immediate-fixes.md        # Current issues that need to be addressed
 ├── functions.php                 # Theme functions, setup, script/style enqueueing
 ├── style.css                     # Theme metadata (Required by WordPress)
 ├── index.php                     # Main fallback template file
@@ -87,6 +101,15 @@ theme/
 - **GSAP Animations**: Smooth animations for enhanced user experience.
 - **Theme Customizer Options**: Settings for navigation, footer, and homepage sections.
 - **WooCommerce Integration**: Overridden templates and custom hooks for seamless shop experience.
+
+## Typography
+
+The theme uses **Cinzel** as the global font throughout the site:
+- Headings: Cinzel
+- Body text: Cinzel
+- Accent elements: Cinzel
+
+This consistent typography creates a unified western-inspired aesthetic across all pages.
 
 ## ScrollTrigger Animations
 
@@ -171,7 +194,7 @@ All scripts and styles are enqueued via the `cuevas_scripts` function in `functi
 - `product-page.css` (Single product page styles, conditional)
 - `animations.css` (Base animation styles, conditional)
 - **Homepage Specific (conditional):** `homepage.css`, `split-slideshow.css`, `shop-categories.css`
-- Google Fonts
+- Google Fonts (Cinzel)
 - Slick Slider CSS
 
 **JavaScript:**
@@ -207,9 +230,12 @@ Theme options are available in the WordPress Customizer (Appearance > Customize)
 - Use `filemtime()` for cache-busting versioning on local assets.
 - Consider using a caching plugin and image optimization for production environments.
 
+## Documentation Maintenance
+When adding new files or features to the theme, always update this README.md to maintain accurate documentation.
+
 ## Credits
 
 - Font Awesome (ensure it's loaded if icons are used)
 - GSAP for animations
 - Slick Carousel for sliders
-- Google Fonts for typography 
+- Google Fonts (Cinzel) for typography 

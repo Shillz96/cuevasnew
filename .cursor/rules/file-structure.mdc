@@ -1,4 +1,9 @@
 ---
+description: 
+globs: 
+alwaysApply: false
+---
+---
 description: Maintain consistent file structure and organization
 globs: app/public/wp-content/themes/cuevas-theme/**/*
 alwaysApply: true
@@ -78,5 +83,15 @@ inc/
 ├── woocommerce.php           # WooCommerce integration
 └── animation-functions.php   # GSAP animation setup
 ```
+
+## Documentation Maintenance
+
+Always update the README.md file when:
+- Adding new files to the theme
+- Creating new directories
+- Changing the file structure
+- Adding new functionality that requires documentation
+
+The README.md should accurately reflect the current state of the theme at all times.
 
 Always place files in their appropriate directories to maintain organization and make the codebase easier to navigate. 

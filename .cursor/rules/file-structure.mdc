@@ -1,0 +1,82 @@
+---
+description: Maintain consistent file structure and organization
+globs: app/public/wp-content/themes/cuevas-theme/**/*
+alwaysApply: true
+---
+# File Structure Guidelines
+
+Maintain the following structure for the Cuevas theme to ensure organization and adherence to WordPress standards.
+
+## Core Theme Files
+
+```
+cuevas-theme/
+├── index.php              # Ultimate fallback for all pages
+├── style.css              # Theme metadata and basic styles
+├── functions.php          # Theme setup and core functionality
+├── header.php             # Global header template
+├── footer.php             # Global footer template
+├── front-page.php         # Custom home page template
+├── page.php               # Generic page template
+├── single.php             # Single post template
+├── archive.php            # Archive template (categories, tags, etc.)
+├── 404.php                # Page not found template
+├── search.php             # Search results template
+├── sidebar.php            # Sidebar template (if used)
+```
+
+## Template Parts
+Reusable components should be organized in the template-parts directory:
+
+```
+template-parts/
+├── content/               # Post/page content templates
+├── header/                # Header components
+├── footer/                # Footer components
+├── homepage/              # Homepage-specific sections
+└── woocommerce/           # WooCommerce-specific components
+```
+
+## WooCommerce Templates
+WooCommerce template overrides should maintain the original structure:
+
+```
+woocommerce/
+├── archive-product.php
+├── single-product.php
+├── content-product.php
+├── cart/
+│   └── cart.php
+└── checkout/
+    └── form-checkout.php
+```
+
+## Asset Organization
+Keep assets organized in the assets directory:
+
+```
+assets/
+├── css/
+│   ├── main.css
+│   ├── woocommerce.css
+│   └── animations.css
+├── js/
+│   ├── scripts.js
+│   ├── animations.js
+│   └── navigation.js
+└── images/
+    └── [theme images]
+```
+
+## Include Files
+Put PHP function files in the inc directory:
+
+```
+inc/
+├── template-functions.php    # Template-specific functions
+├── customizer.php            # Theme customizer settings
+├── woocommerce.php           # WooCommerce integration
+└── animation-functions.php   # GSAP animation setup
+```
+
+Always place files in their appropriate directories to maintain organization and make the codebase easier to navigate. 

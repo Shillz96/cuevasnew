@@ -1,0 +1,45 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+---
+description: Maintain consistent branding in the Cuevas Western Wear theme
+globs: app/public/wp-content/themes/cuevas-theme/**/*
+alwaysApply: true
+---
+# Theme Branding Guidelines
+
+The Cuevas Western Wear theme must maintain consistent branding elements throughout all template files and styles to create a cohesive western-inspired design.
+
+## Color Palette
+Always use the official brand colors defined as CSS variables:
+
+```css
+:root {
+  --color-background: #F5F5DC; /* Beige */
+  --color-text: #3E2723; /* Dark Brown */
+  --color-accent: #8B4513; /* Saddle Brown */
+  --color-buttons: #A52A2A; /* Brown Red */
+  --color-secondary: #D2691E; /* Chocolate */
+}
+```
+
+Do not use hardcoded color values. Always reference these CSS variables.
+
+## Typography
+Maintain the brand typography hierarchy:
+- Headings: Playfair Display
+- Body text: Roboto
+- Accent text: Fjalla One
+
+## Animation Guidelines
+- Use GSAP for all animations
+- Keep animations subtle and enhance the user experience
+- Ensure animations are optimized for performance
+- Provide reduced motion alternatives
+
+## Layout
+- Implement full-width layouts for immersive browsing
+- Use a responsive design with mobile-first approach
+- Ensure the hamburger menu works consistently across devices 

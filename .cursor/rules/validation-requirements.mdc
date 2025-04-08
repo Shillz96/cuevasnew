@@ -1,0 +1,65 @@
+---
+description: Ensure theme meets all validation criteria before completion
+globs: app/public/wp-content/themes/cuevas-theme/**/*
+alwaysApply: true
+---
+# Validation Requirements
+
+All code changes must meet the following validation requirements before being considered complete. Use this as a checklist for development tasks.
+
+## Performance Requirements
+- Pages must load in under 2 seconds on desktop (4 seconds on 3G)
+- GSAP animations must run at 60fps on desktop
+- Animations must not cause layout shifts
+- Mobile animations must be optimized for performance
+- All assets must be properly optimized (images compressed, CSS/JS minified)
+
+## Browser Compatibility
+Ensure functionality works across:
+- Chrome, Firefox, Safari, Edge (latest 2 versions)
+- Mobile Chrome, Safari, and Samsung Internet (latest 2 versions)
+
+## Accessibility Requirements
+- Proper heading structure (h1, h2, etc.)
+- Sufficient color contrast (at least 4.5:1 for normal text)
+- Keyboard navigation support
+- Proper alt text for images
+- Form elements with appropriate labels
+- ARIA attributes used correctly where needed
+- Reduced motion option respected
+
+## Template Validation
+Templates must be checked against these criteria:
+
+### Home Page
+- Full-screen sections display correctly
+- GSAP animations function as expected
+- Featured products query returns correct products
+- Responsive on all device sizes
+
+### Shop Page
+- Products display in a grid layout
+- WooCommerce hooks are maintained
+- Filtering and sorting function correctly
+- Responsive design adapts to all screen sizes
+
+### Product Page
+- All product details display correctly
+- Gallery and variations function properly
+- Add to cart functionality works
+- Related products display properly
+
+### Cart Page
+- Cart displays products correctly
+- Quantity adjustment and removal work
+- Totals calculate correctly
+- Checkout flow functions properly
+
+## Code Quality
+- No PHP warnings or errors
+- No console errors in JavaScript
+- Proper escaping of outputs
+- No deprecated functions
+- BEM naming convention followed for CSS
+- Responsive design principles applied
+- Event listeners properly managed 

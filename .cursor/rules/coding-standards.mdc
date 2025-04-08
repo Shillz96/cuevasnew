@@ -1,0 +1,68 @@
+---
+description: Follow WordPress coding standards and best practices
+globs: app/public/wp-content/themes/cuevas-theme/**/*.{php,css,js}
+alwaysApply: true
+---
+# Coding Standards
+
+## PHP Standards
+- Follow WordPress PHP Coding Standards
+- Use proper escaping functions (`esc_html`, `esc_url`, etc.)
+- Implement sanitization for user input
+- Use template tags instead of global variables
+
+```php
+// Good example
+<h1><?php echo esc_html( get_the_title() ); ?></h1>
+
+// Bad example
+<h1><?php echo $post->post_title; ?></h1>
+```
+
+## CSS Standards
+- Follow BEM naming convention for CSS classes
+- Use CSS custom properties for theme colors and values
+- Implement mobile-first responsive design
+- Keep specificity low and avoid !important
+
+```css
+/* Good example */
+.product-card__title {
+  color: var(--color-text);
+  font-family: 'Playfair Display', serif;
+}
+
+/* Bad example */
+.product .title {
+  color: #3E2723 !important;
+  font-family: 'Playfair Display', serif;
+}
+```
+
+## JavaScript Standards
+- Use ES6+ syntax and features
+- Organize code in modular components
+- Properly initialize GSAP animations
+- Ensure proper event handling and cleanup
+
+```javascript
+// Good example
+document.addEventListener('DOMContentLoaded', () => {
+  const menuToggle = document.querySelector('.menu-toggle');
+  if (menuToggle) {
+    menuToggle.addEventListener('click', toggleMenu);
+  }
+});
+
+// Bad example
+$(document).ready(function() {
+  $('.menu-toggle').click(function() {
+    // ...
+  });
+});
+```
+
+## WooCommerce Integration
+- Maintain WooCommerce hooks when overriding templates
+- Add custom functionality via hooks rather than modifying core templates
+- Test with different product types and configurations 

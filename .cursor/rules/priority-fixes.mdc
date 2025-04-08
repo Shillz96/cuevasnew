@@ -1,0 +1,50 @@
+---
+description: Address critical issues that require immediate attention
+globs: app/public/wp-content/themes/cuevas-theme/**/*
+alwaysApply: true
+---
+# Priority Fixes
+
+The following issues have been identified and require immediate attention. Prioritize addressing these issues before working on new features.
+
+## Frontend/Styling Fixes
+
+### 1. Homepage Header White Bar
+When refreshing the homepage, a white bar appears briefly in the header area. 
+- Check `assets/css/main.css` for header styles
+- Review `assets/js/animations.js` and `assets/js/navigation.js` for transition issues
+- Examine `header.php` for structural problems
+
+### 2. Shop Categories Button Icons
+The Shop Categories section buttons should not display icons, and text should be centered.
+- Fix `template-parts/homepage/shop-categories.php`
+- Update styles in `assets/css/shop-categories.css` or `assets/css/main.css`
+
+### 3. Homepage Section Indicators
+Custom section indicators display generic text ("Section 1", "Section 2") instead of meaningful labels.
+- Update in `inc/customizer.php` if set via Customizer
+- Check `template-parts/homepage/*` if hardcoded
+- Review `assets/js/split-slideshow.js` or `assets/js/animations.js` if generated dynamically
+
+### 4. WooCommerce Review Section Styling
+The reviews section/tab on single product pages lacks proper styling.
+- Update styles in `assets/css/product-page.css` or `assets/css/main.css`
+- Check overridden template `woocommerce/single-product/tabs/reviews.php` if present
+
+### 5. Single Product Page Spacing
+Adjust element spacing on single product pages for better visual flow.
+- Fix in `assets/css/product-page.css` or `assets/css/main.css`
+- Check templates `woocommerce/single-product.php` and `woocommerce/content-single-product.php`
+
+### 6. Navigation Bar Size/Spacing
+The main navigation bar needs to be vertically smaller with better text link spacing.
+- Update styles in `header.php` and `assets/css/main.css`
+- Check any scripts in `assets/js/navigation.js`
+
+## PHP Warnings
+
+### WooCommerce Product Gallery Warnings
+PHP warnings appear on single product pages related to gallery functions.
+- Check `inc/woocommerce.php` for hooks modifying the gallery
+- Review `functions.php` for image size registration/theme support
+- Examine gallery template structure in product templates 
